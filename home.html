@@ -1,0 +1,181 @@
+<section id="homeSection">
+  <h2>🏡 Available Apartments</h2>
+  <p id="welcomeUser" style="margin-left: 20px;"></p>
+
+  <!-- Apartment Listings -->
+  <div class="apartment-list">
+    <!-- Apartment 1 -->
+    <div class="apartment">
+      <img src="apartment.webp" alt="Sta.Monica Apartment" />
+      <div class="apartment-info">
+        <h3>Sta.Monica</h3>
+        <p class="apartment-location">Location: Sta.Monica, Sta.Rita Pampanga</p>
+        <p class="apartment-price">₱2,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+
+    <!-- Apartment 2 -->
+    <div class="apartment">
+      <img src="pia2.webp" alt="San Basilio Apartment" />
+      <div class="apartment-info">
+        <h3>San Basilio</h3>
+        <p class="apartment-location">Location: San Basilio, Sta.Rita Pampanga</p>
+        <p class="apartment-price">₱3,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+
+    <!-- Apartment 3 -->
+    <div class="apartment">
+      <img src="pia3.webp" alt="San Jose Apartment" />
+      <div class="apartment-info">
+        <h3>San Jose</h3>
+        <p class="apartment-location">Location: San Jose, Sta.Rita Pampanga</p>
+        <p class="apartment-price">₱3,500/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+
+    <!-- Apartment 4 -->
+    <div class="apartment">
+      <img src="pia4.webp" alt="San Agustin Apartment" />
+      <div class="apartment-info">
+        <h3>San Agustin</h3>
+        <p class="apartment-location">Location: San Agustin, Sta.Rita Pampanga</p>
+        <p class="apartment-price">₱4,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+
+    <!-- Apartment 5 -->
+    <div class="apartment">
+      <img src="pia5.webp" alt="San Isidro Apartment" />
+      <div class="apartment-info">
+        <h3>San isidro </h3>
+        <p class="apartment-location">Location: San Isidro,Gasak, Sta.Rita Pampanga</p>
+        <p class="apartment-price">₱4,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+
+    <!-- Apartment 6 -->
+    <div class="apartment">
+      <img src="pia6.webp" alt="San Juan Apartment" />
+      <div class="apartment-info">
+        <h3>San Juan</h3>
+        <p class="apartment-location">Location: San Juan Macaba, Sta.Ruta pampanga</p>
+        <p class="apartment-price">₱4,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+  
+    <!-- Apartment 7 -->
+    <div class="apartment">
+      <img src="pia7.webp" alt="San Juan Apartment" />
+      <div class="apartment-info">
+        <h3>San matias</h3>
+        <p class="apartment-location">Location: San Matias, Sta.Rita Pampanga </p>
+        <p class="apartment-price">₱4,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+  
+    <!-- Apartment 8 -->
+    <div class="apartment">
+      <img src="pia8.webp" alt="San Juan Apartment" />
+      <div class="apartment-info">
+        <h3>Becuran</h3>
+        <p class="apartment-location">Location: Becuran, Sta.Rita Pampanga</p>
+        <p class="apartment-price">₱4,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+  
+    <!-- Apartment 9 -->
+    <div class="apartment">
+      <img src="pia9.webp" alt="San Juan Apartment" />
+      <div class="apartment-info">
+        <h3>San Matias</h3>
+        <p class="apartment-location">Location: San Matias, Sta.Rita Pampanga </p>
+        <p class="apartment-price">₱4,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+  
+    <!-- Apartment 10 -->
+    <div class="apartment">
+      <img src="pia10.webp" alt="San Juan Apartment" />
+      <div class="apartment-info">
+        <h3>Dila Dila</h3>
+        <p class="apartment-location">Location: Dila Dila, Sta.Rita Pampanga</p>
+        <p class="apartment-price">₱4,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+</section>
+
+<style>
+  .apartment-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .apartment {
+    flex: 1 1 200px; /* grow, shrink, basis */
+    max-width: 220px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+    transition: transform 0.2s ease;
+  }
+
+  .apartment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.2);
+  }
+
+  .apartment img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .apartment-info {
+    padding: 10px;
+  }
+
+  .apartment-location {
+    color: #888;
+    font-size: 0.9em;
+    margin: 5px 0;
+  }
+
+  .apartment-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #1565c0;
+    margin-bottom: 10px;
+  }
+
+  button {
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0d47a1;
+  }
+
+  
+</style>
