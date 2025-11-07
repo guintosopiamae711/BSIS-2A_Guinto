@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online Rental Apartment in Sta.Rita</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #70527c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: rgb(255, 255, 255);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    h2 {
+      color: #1565c0;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #1565c0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0d47a1;
+    }
+
+    .link {
+      color: #1565c0;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    #dashboard {
+      display: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .apartment-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .apartment {
+      width: 200px;
+      margin: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    .apartment img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .apartment-info {
+      padding: 10px;
+    }
+
+    .apartment-location {
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    .apartment-price {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #1565c0;
+    }
+
+    .logout-btn {
+      background-color: #1f0929;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* Add styles for the image */
+    .apartment-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* Navigation Bar styles */
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #1565c0;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      user-select: none;
+    }
+
+    nav span {
+      cursor: pointer;
+      font-weight: bold;
+    }
+    nav span:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections inside dashboard */
+    #homeSection, #aboutSection, #contactSection {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN FORM -->
+  <div class="container" id="loginContainer">
+    <h2>Online Rental Apartment Login Now!</h2>
+    <input type="text" id="loginUsername" placeholder="Username" />
+    <input type="password" id="loginPassword" placeholder="Password" />
+    <button onclick="login()">Login</button>                      
+    <p>Don't have an account? <span class="link" onclick="showRegister()">Register here</span></p>
+  </div>
+
+  <!-- REGISTER FORM -->
+  <div class="container" id="registerContainer" style="display:none;">
+    <h2>Register Now!</h2>
+    <input type="text" id="regUsername" placeholder="Choose username" />
+    <input type="password" id="regPassword" placeholder="Choose password" />
+    <button onclick="register()">Register</button>
+    <p>Already have an account? <span class="link" onclick="showLogin()">Login here</span></p>
+    <a href="loginadmin.html"><span class="link" onclick="showRegister()">Login Admin</span></p>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="container" id="dashboard">
+   <body> 
+    <div>
+    <a href="home.html"><button>HOME</button></a>
+    <a href="home.html"></a>
+    <a href="about.html"><button>ABOUT US</button></a>
+    <a href="about.html"></a>
+    <a href="contactus.html"><button>CONTACT US </button>
+    <a href="contactus.html"></a>
+    </div>
+</body>
+
+ <section id="homeSection">
+  <h2>🏡 Available Apartments</h2>
+  <p id="welcomeUser" style="margin-left: 20px;"></p>
+
+  <!-- Apartment Listings -->
+  <div class="apartment-list">
+    <!-- Apartment 1 -->
+    <div class="apartment">
+      <img src="apartment.webp" alt="Sta.Monica Apartment" />
+      <div class="apartment-info">
+        <h3>Sta.Monica</h3>
+        <p class="apartment-location">Location: Sta.Monica, Pampanga</p>
+        <p class="apartment-price">₱2,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+
+    <!-- Apartment 2 -->
+    <div class="apartment">
+      <img src="pia2.webp" alt="San Basilio Apartment" />
+      <div class="apartment-info">
+        <h3>San Basilio</h3>
+        <p class="apartment-location">Location: San Basilio, Pampanga</p>
+        <p class="apartment-price">₱3,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+
+    <!-- Apartment 3 -->
+    <div class="apartment">
+      <img src="pia3.webp" alt="San Jose Apartment" />
+      <div class="apartment-info">
+        <h3>San Jose</h3>
+        <p class="apartment-location">Location: San Jose, Pamapnga</p>
+        <p class="apartment-price">₱3,500/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+
+    <!-- Apartment 4 -->
+    <div class="apartment">
+      <img src="pia4.webp" alt="San Agustin Apartment" />
+      <div class="apartment-info">
+        <h3>San Agustin</h3>
+        <p class="apartment-location">Location: San Agustin, Pampanga</p>
+        <p class="apartment-price">₱4,000/month</p>
+        <button>RENT NOW!</button>
+      </div>
+    </div>
+  </div>
+
+       <button class="logout-btn" onclick="logout()">Logout</button>
+</section>
+
+<style>
+  .apartment-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .apartment {
+    flex: 1 1 200px; /* grow, shrink, basis */
+    max-width: 220px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+    transition: transform 0.2s ease;
+  }
+
+  .apartment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.2);
+  }
+
+  .apartment img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .apartment-info {
+    padding: 10px;
+  }
+
+  .apartment-location {
+    color: #888;
+    font-size: 0.9em;
+    margin: 5px 0;
+  }
+
+  .apartment-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #1565c0;
+    margin-bottom: 10px;
+  }
+
+  button {
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0d47a1;
+  }
+</style>
+    
+  </div>
+
+  <script>
+    // Switch to Register Form
+    function showRegister() {
+      document.getElementById("loginContainer").style.display = "none";
+      document.getElementById("registerContainer").style.display = "block";
+      document.getElementById("dashboard").style.display = "none";
+    }
+
+    // Switch to Login Form
+    function showLogin() {
+      document.getElementById("registerContainer").style.display = "none";
+      document.getElementById("loginContainer").style.display = "block";
+    }
+
+    // Register Function
+    function register() {
+      let username = document.getElementById("regUsername").value.trim();
+      let password = document.getElementById("regPassword").value.trim();
+
+      if (username === "" || password === "") {
+        alert("Please fill in all fields!");
+        return;
+      }
+
+      if (localStorage.getItem(username)) {
+        alert("Username already exists!");
+      } else {
+        localStorage.setItem(username, password);
+        alert("Registration successful! You can now log in.");
+        showLogin();
+      }
+    }
+
+    // Login Function
+    function login() {
+      let username = document.getElementById("loginUsername").value.trim();
+      let password = document.getElementById("loginPassword").value.trim();
+      let storedPassword = localStorage.getItem(username);
+
+      if (!storedPassword) {
+        alert("User not found!");
+      } else if (storedPassword !== password) {
+        alert("Incorrect password!");
+      } else {
+        document.getElementById("loginContainer").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+        document.getElementById("welcomeUser").innerText = "Welcome, " + username + "!";
+      }
+    }
+
+    // Logout Function
+    function logout() {
+      document.getElementById("dashboard").style.display = "none";
+      document.getElementById("loginUsername").value = "";
+      document.getElementById("loginPassword").value = "";
+      showLogin();
+    }
+
+    // Scroll to section by ID (smooth scroll)
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  </script>
+
+</body>
+</html>
