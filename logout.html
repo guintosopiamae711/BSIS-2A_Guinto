@@ -1,34 +1,103 @@
-<!-- log out Section -->
-<section id="aboutSection" style="padding: 15px; background-color: #f0f4f8; border-radius: 10px; margin-bottom: 40px;">
-  <h3 style="color: #1565c0; margin-bottom: 10px;">About Us</h3>
-  <p style="line-height: 1.6; color: #333;">
-    Welcome to <strong>Online Rental Apartment</strong>, your trusted partner in finding the perfect home.
-    We are dedicated to providing safe, affordable, and convenient apartment rentals that suit your lifestyle and budget.
-    Our mission is to connect tenants with their ideal apartments quickly and effortlessly, ensuring a smooth and enjoyable rental experience.
-  </p>
-  <p style="line-height: 1.6; color: #333;">
-    With a wide selection of listings across various locations, we prioritize transparency, reliability, and customer satisfaction.
-    Whether you're searching for a cozy studio or a spacious family unit, we’re here to help you find the right place to call home.
-  </p>
-
-  <!-- Styled link acting like a button -->
-  <a href="index.html" class="logout-button">Log Out</a>
-</section>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logged Out - Dorm Portal</title>
 <style>
-  .logout-button {
-    display: inline-block;
-    background-color: #1565c0;
-    color: white;
-    text-decoration: none;
-    font-size: larger;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+    /* ====== GLOBAL STYLE ====== */
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
 
-  .logout-button:hover {
-    background-color: #0d47a1;
-  }
+    /* ===== NAVBAR ===== */
+    nav {
+        width: 100%;
+        padding: 20px 50px;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(12px);
+        display: flex;
+        font-weight: bold;
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    nav div {
+        font-size: 24px;
+        color: #fff;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(16px);
+        padding: 50px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+        font-size: 28px;
+        color: #fff;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        background: #ffdd57;
+        color: #333;
+        padding: 15px 30px;
+        border-radius: 12px;
+        font-weight: bold;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    a:hover {
+        background: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+        .container {
+            width: 90%;
+            padding: 30px;
+        }
+        h1 { font-size: 24px; }
+        a { padding: 12px 25px; font-size: 16px; }
+    }
 </style>
+</head>
+<body>
+
+<nav>
+    <div>Dorm Portal</div>
+</nav>
+
+<div class="container">
+    <h1>You have been logged out</h1>
+    <a href="index.html">Login Again</a>
+</div>
+
+</body>
+</html>

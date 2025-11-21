@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dorm Portal - Dorms</title>
+
+<!-- BOOTSTRAP 5 CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        background: #f4f7fc;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .card {
+        border-radius: 12px;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .page-title {
+        margin-top: 40px;
+        text-align: center;
+        font-weight: 700;
+    }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Dorm Portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="dorms.html">Dorms</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a class="btn btn-warning ms-3 fw-bold" href="logout.html">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE TITLE -->
+<h1 class="page-title">Dorm Listings</h1>
+
+<!-- DORM CARDS -->
+<div class="container my-5">
+    <div class="row g-4">
+
+        <!-- Dorm 1 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="dorm1.jpg" class="card-img-top" alt="Dorm 1">
+                <div class="card-body">
+                    <h4 class="card-title">Dorm 1: Sunny Residency</h4>
+                    <p class="card-text"><strong>Location:</strong> San Isidro Gasak Sta.Rita Pampanga</p>
+                    <p class="card-text"><strong>Price:</strong> 2,000 / month</p>
+                    <!-- Availability status -->
+                    <p class="card-text">
+                    <strong>Availability:</strong> 
+                    <span class="text-success">Available</span>
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#dorm1Modal">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dorm 2 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="dorms2.jpg" class="card-img-top" alt="Dorm 2">
+                <div class="card-body">
+                    <h4 class="card-title">Dorm 2: Blue Haven Residency</h4>
+                    <p class="card-text"><strong>Location:</strong> Zone 5 Dila Dila Sta.Rita Pampanga</p>
+                    <p class="card-text"><strong>Price:</strong> 3,500 / month</p>
+                    <p class="card-text"></p>
+                     <strong>Availability:</strong> <span class="text-danger">Full</span>
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#dorm2Modal">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dorm 3 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="dorm3.jpg" class="card-img-top" alt="Dorm 3">
+                <div class="card-body">
+                    <h4 class="card-title">Dorm 3: Green Residency</h4>
+                    <p class="card-text"><strong>Location:</strong> San Basilio Sta.Rita Pampanga</p>
+                    <p class="card-text"><strong>Price:</strong> 4,500 / month</p>
+                      <!-- Availability status -->
+                    <p class="card-text">
+                    <strong>Availability:</strong> 
+                    <span class="text-success">Available</span>
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#dorm3Modal">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dorm 4 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="dorms4.jpg" class="card-img-top" alt="Dorm 4">
+                <div class="card-body">
+                    <h4 class="card-title">Dorm 4: River Side Residency</h4>
+                    <p class="card-text"><strong>Location:</strong> Becuran Sta.Rita Pampanga</p>
+                    <p class="card-text"><strong>Price:</strong> 3,000 / month</p>
+                    <p class="card-text"></p>
+                    <strong>Availability:</strong> <span class="text-danger">Full</span>
+
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#dorm4Modal">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dorm 5 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="dorms5.webp" class="card-img-top" alt="Dorm 5">
+                <div class="card-body">
+                    <h4 class="card-title">Dorm 5: Oakwood Residency </h4>
+                    <p class="card-text"><strong>Location:</strong> Sta.Monica Sta,Rita Pampanga</p>
+                    <p class="card-text"><strong>Price:</strong> 3,300 / month</p>
+                      <!-- Availability status -->
+                    <p class="card-text">
+                    <strong>Availability:</strong> 
+                    <span class="text-success">Available</span>
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#dorm5Modal">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dorm 6 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="dorms6.webp" class="card-img-top" alt="Dorm 6">
+                <div class="card-body">
+                    <h4 class="card-title">Dorm 6: Maple Residency</h4>
+                    <p class="card-text"><strong>Location:</strong> San Matias Sta.Rita Pampanga</p>
+                    <p class="card-text"><strong>Price:</strong> 2,500 / month</p>
+                    <p class="card-text"></p>
+                    <strong>Availability:</strong> <span class="text-danger">Full</span>
+
+                    <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#dorm6Modal">View Details</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- MODALS -->
+
+<!-- Dorm 1 Modal -->
+<div class="modal fade" id="dorm1Modal" tabindex="-1" aria-labelledby="dorm1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dorm1Label">Dorm 1: Sunny Residence</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+      <!-- Availability status -->
+        <p class="card-text">
+        <strong>Availability:</strong> 
+        <span class="text-success">Available</span>
+        <div class="modal-body">
+        <p><strong>Location:</strong> San Isidro Gasak Sta.Rita Pampanga</p>
+        <p><strong>Contact No:</strong>0998-2511-798</p>
+        <p><strong>Price:</strong> 2,000 / month</p>
+        <p><strong>Facilities:</strong> Free Wi-Fi, Laundry, Gym, Study Rooms</p>
+        <p><strong>Description:</strong> Sunny Residence offers bright and spacious rooms ideal for students. Conveniently located near shopping and public transport.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dorm 2 Modal -->
+<div class="modal fade" id="dorm2Modal" tabindex="-1" aria-labelledby="dorm2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dorm2Label">Dorm 2: Blue Haven Dorm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+       <p class="card-text"></p>
+        <strong>Availability:</strong> <span class="text-danger">Full</span>
+        <div class="modal-body">
+        <p><strong>Location:</strong> Zone 5 Dila Dila Sta.Rita Pampanga</p>
+        <p><strong>Contact No:</strong>0998-2511-798</p>
+        <p><strong>Price:</strong> 3,500 / month</p>
+        <p><strong>Facilities:</strong> Swimming Pool, 24/7 Security, Study Hall</p>
+        <p><strong>Description:</strong> Blue Haven Dorm is perfect for students looking for a peaceful riverside environment with modern amenities.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dorm 3 Modal -->
+<div class="modal fade" id="dorm3Modal" tabindex="-1" aria-labelledby="dorm3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dorm3Label">Dorm 3: Green Villa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+       <!-- Availability status -->
+        <p class="card-text">
+        <strong>Availability:</strong> 
+        <span class="text-success">Available</span>
+        <div class="modal-body">
+        <p><strong>Location:</strong> San Basilio Sta.Rita Pampanga</p>
+        <p><strong>Contact No:</strong>0998-2511-798</p>
+        <p><strong>Price:</strong> 4,500 / month</p>
+        <p><strong>Facilities:</strong> Gym, Study Rooms, Cafeteria, Parking</p>
+        <p><strong>Description:</strong> Green Villa offers premium dorm rooms with a focus on comfort and convenience for university students.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dorm 4 Modal -->
+<div class="modal fade" id="dorm4Modal" tabindex="-1" aria-labelledby="dorm4Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dorm4Label">Dorm 4: River Side Lodge</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <p class="card-text"></p>
+      <strong>Availability:</strong> <span class="text-danger">Full</span>
+
+      <div class="modal-body">
+        <p><strong>Location:</strong> Becuran Sta.Rita Pampanga</p>
+        <p><strong>Contact No:</strong>0998-2511-798</p>
+        <p><strong>Price:</strong> 3,000 / month</p>
+        <p><strong>Facilities:</strong> Laundry, Gym, Study Room, Security</p>
+        <p><strong>Description:</strong> River Side Lodge offers cozy rooms with beautiful river views, ideal for focused student life.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dorm 5 Modal -->
+<div class="modal fade" id="dorm5Modal" tabindex="-1" aria-labelledby="dorm5Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dorm5Label">Dorm 5: Oakwood Apartments</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+       <!-- Availability status -->
+        <p class="card-text">
+        <strong>Availability:</strong> 
+        <span class="text-success">Available</span>
+        <div class="modal-body">
+        <p><strong>Location:</strong> Sta.Monica Sta,Rita Pampanga</p>
+        <p><strong>Contact No:</strong>0998-2511-798</p>
+        <p><strong>Price:</strong> 3,300 / month</p>
+        <p><strong>Facilities:</strong> Wi-Fi, Gym, Cafeteria, Parking</p>
+        <p><strong>Description:</strong> Oakwood Apartments provides modern student living with all essential facilities and easy access to campus.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Dorm 6 Modal -->
+<div class="modal fade" id="dorm6Modal" tabindex="-1" aria-labelledby="dorm6Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dorm6Label">Dorm 6: Maple Residency</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+       <p class="card-text"></p>
+       <strong>Availability:</strong> <span class="text-danger">Full</span>
+
+      <div class="modal-body">
+        <p><strong>Location:</strong> San Matias Sta.Rita Pampanga</p>
+        <p><strong>Contact No:</strong>0998-2511-798</p>
+        <p><strong>Price:</strong> 2,500 / month</p>
+        <p><strong>Facilities:</strong> Study Room, Laundry, Gym, Cafeteria</p>
+        <p><strong>Description:</strong> Maple Residency is conveniently located downtown with comfortable rooms and great student amenities.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

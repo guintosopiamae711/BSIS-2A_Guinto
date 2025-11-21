@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Dorm Portal</title>
+
+    <style>
+        /* Global Page Style */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        /* Navbar */
+        nav {
+            width: 100%;
+            padding: 18px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.15);
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        /* Contact Container */
+        .contact-box {
+            margin-top: 70px;
+            width: 420px;
+            padding: 35px;
+            background: rgba(255,255,255,0.18);
+            backdrop-filter: blur(15px);
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            animation: fadeIn 1.4s ease-in-out;
+        }
+
+        .contact-box h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        /* Inputs */
+        .contact-box input,
+        .contact-box textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .contact-box input:focus,
+        .contact-box textarea:focus {
+            box-shadow: 0 0 8px #ffdd57;
+        }
+
+        textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        /* Send Button */
+        .send-btn {
+            width: 100%;
+            padding: 14px;
+            background: #ffdd57;
+            color: #333;
+            font-size: 17px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .send-btn:hover {
+            background: white;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<nav style="display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; background: #2575fc; color: white; font-family: 'Poppins', sans-serif;">
+    <div style="font-weight: bold; font-size: 24px;">Dorm Portal</div>
+    <div>
+        <a href="dorm.html" style="color: white; margin-left: 25px; text-decoration: none; font-weight: 500; transition: color 0.3s;">Dorms</a>
+          
+    </div>
+</nav>
+
+
+<div class="contact-box">
+    <h1>Contact Us</h1>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Your Contact Number" required>
+        <input type="text" placeholder="Your Location" required>
+        <textarea placeholder="Write your message..." required></textarea>
+
+        <button class="send-btn" type="submit">Send Message</button>
+    </form>
+</div>
+
+</body>
+</html>

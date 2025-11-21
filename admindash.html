@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Tenant Management</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    
+    <style>
+        body {
+            background-color: #f5f7fa;
+        }
+        .nav-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .card-title {
+            font-weight: 600;
+        }
+        .table thead {
+            background-color: #1a73e8;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-primary p-3 mb-4">
+        <span class="navbar-brand nav-title">Admin Panel</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="dorm.html" style="color: white; margin-left: 25px; text-decoration: none; font-weight: 500; transition: color 0.3s;">Dorms</a>
+        <a href="index.html" style="color: white; margin-left: 25px; text-decoration: none; font-weight: 500; transition: color 0.3s;">Logout</a>
+
+    </nav>
+
+    
+
+    <div class="container">
+
+        <!-- TENANT RECORDS -->
+        <div class="card mb-4">
+            <div class="card-header bg-light">
+                <h4 class="card-title">Tenant Records</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered" id="tenantTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Location</th>
+                            <th>Phone</th>
+                            <th>Registered On</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div id="tenantLoader" class="text-center p-2">Loading tenants...</div>
+            </div>
+        </div>
+
+        <!-- MESSAGES FROM TENANTS -->
+        <div class="card mb-4">
+            <div class="card-header bg-light">
+                <h4 class="card-title">Messages From Tenants</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered" id="messageTable">
+                    <thead>
+                        <tr>
+                            
+                            <th>Tenant Name</th>
+                            <th>Contact No.</th>
+                            <th>Location</th>
+                            <th>Message</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div id="messageLoader" class="text-center p-2">Loading messages...</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- FETCH DATA -->
+    <script>
+        // CHANGE TO YOUR BACKEND API URL
+        const API_BASE = "http://localhost:5000";
+
+        // Load Tenant Records
+        fetch(API_BASE + "/tenants")
+            .then(res => res.json())
+            .then(data => {
+                const table = document.querySelector("#tenantTable tbody");
+                const loader = document.getElementById("tenantLoader");
+                loader.style.display = "none";
+
+                data.forEach(row => {
+                    table.innerHTML += `
+                        <tr>
+                            <td>${row.id}</td>
+                            <td>${row.full_name}</td>
+                            <td>${row.email}</td>
+                            <td>${row.phone}</td>
+                            <td>${row.apartment_no}</td>
+                            <td>${row.created_at}</td>
+                        </tr>`;
+                });
+            })
+            .catch(() => {
+                document.getElementById("tenantLoader").innerText =
+                    "Failed to load tenant data.";
+            });
+
+
+        // Load Messages
+        fetch(API_BASE + "/messages")
+            .then(res => res.json())
+            .then(data => {
+                const table = document.querySelector("#messageTable tbody");
+                const loader = document.getElementById("messageLoader");
+                loader.style.display = "none";
+   
+                data.forEach(row => {
+                    table.innerHTML += `
+                        <tr>
+                            <td>${row.id}</td>
+                            <td>${row.full_name}</td>
+                            <td>${row.subject}</td>
+                            <td>${row.message}</td>
+                            <td>${row.created_at}</td>
+                        </tr>`;
+                });
+            })
+            .catch(() => {
+                document.getElementById("messageLoader").innerText =
+                    "Failed to load messages.";
+            });
+    </script>
+
+</body>
+</html>
